@@ -1,7 +1,7 @@
 import { useState } from "react";
 import server from "./server";
 
-function Transfer({ address, setBalance }) {
+function Transfer({ address, setBalance, signature, setSignature, recovery, setRecovery }) {
   const [sendAmount, setSendAmount] = useState("");
   const [recipient, setRecipient] = useState("");
 
@@ -17,6 +17,8 @@ function Transfer({ address, setBalance }) {
         sender: address,
         amount: parseInt(sendAmount),
         recipient,
+        signature,
+        recovery,
       });
       setBalance(balance);
     } catch (ex) {
@@ -44,6 +46,16 @@ function Transfer({ address, setBalance }) {
           value={recipient}
           onChange={setValue(setRecipient)}
         ></input>
+      </label>
+
+      <label>
+        Signature
+        <input placeholder="Type an signature" value={signature} onChange={setValue(setSignature)}></input>
+      </label>
+
+      <label>
+        Recovery
+        <input placeholder="Type a recovery" value={recovery} onChange={setValue(setRecovery)}></input>
       </label>
 
       <input type="submit" className="button" value="Transfer" />

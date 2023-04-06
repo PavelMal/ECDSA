@@ -1,3 +1,13 @@
+##
+
+In the end of scripts/generate.js you can find test data (Already generated private/public keys, hexed signature and recovery bit)
+
+How it works:
+ - You need to input signature, recovery, recipient and amount. On backend side there is a proccess to recover a public key and check funds on that account. 
+ If there is no account associated with already saved accounts, you will get an error
+
+
+
 ## ECDSA Node
 
 This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.

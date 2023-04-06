@@ -4,6 +4,7 @@ function Wallet({ address, setAddress, balance, setBalance }) {
   async function onChange(evt) {
     const address = evt.target.value;
     setAddress(address);
+
     if (address) {
       const {
         data: { balance },
@@ -16,7 +17,7 @@ function Wallet({ address, setAddress, balance, setBalance }) {
 
   return (
     <div className="container wallet">
-      <h1>Your Wallet</h1>
+      <h1>Check wallets funds</h1>
 
       <label>
         Wallet Address
